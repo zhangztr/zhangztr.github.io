@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#6b8e23">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="食谱田地">
+  <title>食谱田地</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 顶部栏 -->
+  <header class="top-bar">
+    <span class="top-bar__title" id="topBarTitle">食谱田地</span>
+    <span class="top-bar__gold" id="topBarGold">🪙 0</span>
+  </header>
+
+  <!-- 屏幕容器 -->
+  <main class="screen-container">
+
+    <section class="screen" id="screen-dashboard"></section>
+    <section class="screen" id="screen-farm"></section>
+    <section class="screen" id="screen-supermarket"></section>
+    <section class="screen" id="screen-kitchen"></section>
+    <section class="screen" id="screen-inventory"></section>
+    <section class="screen" id="screen-recipes"></section>
+
+  </main>
+
+  <!-- 底部 Tab 栏 -->
+  <nav class="bottom-nav">
+    <button class="nav-btn" data-tab="dashboard">📋 仪表盘</button>
+    <button class="nav-btn" data-tab="farm">🌱 田地</button>
+    <button class="nav-btn" data-tab="supermarket">🛒 超市</button>
+    <button class="nav-btn" data-tab="kitchen">🍳 厨房</button>
+    <button class="nav-btn" data-tab="inventory">🎒 背包</button>
+    <button class="nav-btn" data-tab="recipes">📖 菜谱</button>
+  </nav>
+
+  <!-- 种植弹窗 overlay -->
+  <div class="modal-overlay" id="plantModal" style="display:none;">
+    <div class="modal">
+      <div class="modal-title">选择种子</div>
+      <div class="modal-body" id="plantSeeds"></div>
+      <div class="modal-actions">
+        <button class="btn btn--cancel" id="plantCancel">取消</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 菜谱编辑弹窗 overlay -->
+  <div class="modal-overlay" id="recipeFormModal" style="display:none;">
+    <div class="modal">
+      <div class="modal-title" id="recipeFormTitle">新建菜谱</div>
+      <div class="modal-body" id="recipeFormBody"></div>
+      <div class="modal-actions" id="recipeFormActions">
+        <button class="btn btn--cancel" id="recipeFormCancel">取消</button>
+        <button class="btn btn--primary" id="recipeFormSave">保存</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
